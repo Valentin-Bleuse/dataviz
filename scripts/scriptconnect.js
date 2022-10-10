@@ -1,16 +1,20 @@
+function RedirectionJavascript() {
+    document.location.href = "../";
+}
+
 function validateForm() {
-    var u = document.getElementsByClassName("username").value;
-    var p = document.getElementsByClassName("password").value;
+    var u = document.querySelector(".username");
+    var p = document.querySelector(".password");
+    //Le if else est seulement un easter egg
+    if (u.value == "tristan") {
+        console.log("yeeeey")
+        if (p.value == "garcia") {
+            console.log("omg")
+            document.querySelector(".container-connection").style.display = "none"
+        }
 
-    if (u == "tristan") {
-        document.querySelector(".container-connection").style.display = "none"
     }
-    if (p == "garcia") {
-        alert("Please enter you Password");
-        return false;
+    else {
+        RedirectionJavascript()
     }
-
-    alert("All datas are valid!, send it to the server!")
-
-    return true;
 }

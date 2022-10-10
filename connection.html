@@ -15,7 +15,7 @@
     <main class='bg-color'>
         <article class='container-connection  br-rd'>
 
-            <form action="connection.html" onsubmit="return validateForm()">
+            <form action="connection.html">
 
                 <div class="container-text main-color">
                     <input class='br-rd username white' type="text" placeholder="Identifiant">
@@ -23,10 +23,13 @@
                 </div>
                 <div class="container-buttons secondary-color">
                     <input class='br-rd' type="button" value="Annuler">
-                    <input class='br-rd bg-blue white' type="button" value="se connecter">
+                    <input class='br-rd bg-blue white' type="button" value="se connecter" onClick="validateForm()">
                 </div>
             </form>
         </article>
+        <aside>
+            <img src="" alt="">
+        </aside>
     </main>
 
 </body>
