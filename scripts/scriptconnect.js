@@ -7,9 +7,11 @@ function zooming(lat, long) {
     positions(lat, long, zoom);
     zoom += 2;
     for (let index = 0; index < 5; index++) {
+
+        positions(lat, long, zoom);
         zoom += 3;
         setTimeout(() => {
-            positions(lat, long, zoom);
+            a += 1
         }, 3000);
         console.log("zoom =" + zoom);
         console.log(index);
