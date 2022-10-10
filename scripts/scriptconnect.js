@@ -2,15 +2,12 @@ function RedirectionStats() {
     document.location.href = "../";
 }
 let zoom = 0
-
 function zooming(lat, long) {
-    positions(lat, long, zoom);
-    zoom += 2;
+    //positions(lat, long, zoom);
+    //zoom += 2;
     for (let index = 0; index < 5; index++) {
         zoom += 3;
-        setTimeout(() => {
-            positions(lat, long, zoom);
-        }, 3000);
+        setTimeout(positions, 3000, lat, long, zoom);
         console.log("zoom =" + zoom);
         console.log(index);
 
