@@ -11,7 +11,7 @@ function zooming(lat, long) {
         positions(lat, long, zoom);
         zoom += 3;
         setTimeout(() => {
-            a += 1
+            a = 1
         }, 3000);
         console.log("zoom =" + zoom);
         console.log(index);
