@@ -1,23 +1,33 @@
 function RedirectionStats() {
     document.location.href = "../";
 }
-let zoom = 20
+let zoom = 0
+
 function zooming(lat, long) {
+    positions(lat, long, zoom);
+    zoom += 2;
     for (let index = 0; index < 5; index++) {
+        zoom += 3;
         setTimeout(() => {
             positions(lat, long, zoom);
-            zoom -= 3;
-        }, 2000)
-
+        }, 3000);
+        console.log("zoom =" + zoom);
+        console.log(index);
 
     }
 }
 
-function positions(lat, long, lader) {
-    console.log(lat);
-    console.log(long)
-    console.log(long + lat)
 
+
+
+function positions(lat, long, lader) {
+    // console.log(lat);
+    // console.log(long)
+    // console.log(long + lat)
+    var container = L.DomUtil.get('map');
+    if (container != null) {
+        container._leaflet_id = null;
+    }
     var map = L.map('map').setView([lat, long], lader);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
@@ -26,6 +36,7 @@ function positions(lat, long, lader) {
 
     var marker = L.marker([lat, long]).addTo(map);
 }
+
 
 function validateForm() {
     var u = document.querySelector(".username");
