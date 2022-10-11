@@ -45,9 +45,21 @@ function validateForm() {
             console.log("omg")
             document.querySelector(".container-connection").style.display = "none"
             document.querySelector(".easter-egg").style.display = "flex"
+            document.querySelector(".easter-tri").style.display = "block"
         }
 
     }
+    else if (u.value == "gaelle") {
+        console.log("yeeeey")
+        if (p.value == "chat") {
+            console.log("omg")
+            document.querySelector(".container-connection").style.display = "none"
+            document.querySelector(".easter-egg").style.display = "flex"
+            document.querySelector(".easter-cat").style.display = "block"
+        }
+
+    }
+
     else {
         if (navigator.geolocation) {
             /* geolocation is available */

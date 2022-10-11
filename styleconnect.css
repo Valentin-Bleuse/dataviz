@@ -130,6 +130,17 @@ main {
     animation: rotation 1s infinite linear;
 }
 
+.easter-tri {
+    display: none;
+}
+
+.easter-cat {
+    width: 20%;
+    display: none;
+    margin: 5rem;
+}
+
+
 
 
 #map {
