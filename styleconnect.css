@@ -33,7 +33,7 @@ main {
 .container-text {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 50%;
     padding: 1vw;
     border-radius: 5px 5px 0 0;
     /* height: 7vw; */
@@ -43,16 +43,40 @@ main {
 
 }
 
-
-.container-text input {
-    width: 50%;
-    margin-top: 1vw;
-    height: 2rem;
+.main-form-container {
+    display: flex;
+    padding-top: 1vw;
+    /* height: 2rem; */
     background-color: rgba(36, 50, 62);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     border: 0 solid;
-    padding: 5px;
+    flex-direction: row;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
 }
+
+.container-text input {
+
+    padding: 5px;
+    margin: 5px 0px;
+
+
+}
+
+input {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border: none;
+    width: 100%;
+}
+
+.illustration-connect {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 
 
 
@@ -64,12 +88,16 @@ main {
     border-top: 3px solid black;
     align-items: center;
     border-radius: 0 0 5px 5px;
-    border: 0 solid;
+
 
 }
 
-.container-buttons:active {
+.container-buttons input:active {
     color: blue solid 1px
+}
+
+.container-buttons input {
+    width: 25%
 }
 
 .bg-color {
@@ -106,6 +134,7 @@ main {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     border: 0 solid;
     cursor: pointer;
+
 }
 
 .br-rd {
