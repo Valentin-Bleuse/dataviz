@@ -1,20 +1,31 @@
+
+
+
 function RedirectionStats() {
     document.location.href = "../";
 }
 let zoom = 0
 function zooming(lat, long) {
-    //positions(lat, long, zoom);
-    //zoom += 2;
-    for (let index = 0; index < 5; index++) {
-        zoom += 3;
-        setTimeout(positions, 3000, lat, long, zoom);
-        console.log("zoom =" + zoom);
-        console.log(index);
+    positions(lat, long, zoom);
+    zoom += 2;
+    setTimeout(positions, 500, lat, long, zoom);
+    zoom += 2;
+    setTimeout(positions, 1000, lat, long, zoom);
+    zoom += 3;
+    setTimeout(positions, 1500, lat, long, zoom);
+    zoom += 3;
+    setTimeout(positions, 2000, lat, long, zoom);
+    zoom += 3;
+    setTimeout(positions, 2500, lat, long, zoom);
+    zoom += 3;
+    setTimeout(positions, 3000, lat, long, zoom);
+    zoom += 3;
+    setTimeout(positions, 3500, lat, long, zoom);
+    zoom += 3;
+    //     console.log("zoom =" + zoom);
+    //     console.log(index);
 
-    }
 }
-
-
 
 
 function positions(lat, long, lader) {
@@ -33,8 +44,11 @@ function positions(lat, long, lader) {
 
     var marker = L.marker([lat, long]).addTo(map);
 }
-
-
+function active_typing() {
+    document.querySelector("#map").style.display = "none";
+    document.querySelector(".wrapper-coding").style.display = "block"
+    document.querySelector(".typing-effect").style.display = "block"
+}
 function validateForm() {
     var u = document.querySelector(".username");
     var p = document.querySelector(".password");
@@ -76,10 +90,12 @@ function validateForm() {
 
 
 
+
+
         } else {
             /* geolocation IS NOT available */
         }
-
+        // active_typing();
         // RedirectionStats()
     }
 

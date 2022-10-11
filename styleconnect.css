@@ -72,12 +72,15 @@ input {
 .illustration-connect {
     width: 50%;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+    padding: 5px;
 
 }
 
-
+.illustration-connect img {
+    width: 50%;
+}
 
 
 .container-buttons {
@@ -92,8 +95,8 @@ input {
 
 }
 
-.container-buttons input:active {
-    color: blue solid 1px
+.container-buttons input:focus {
+    outline: blue solid;
 }
 
 .container-buttons input {
@@ -134,6 +137,7 @@ input {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     border: 0 solid;
     cursor: pointer;
+    width: 25%;
 
 }
 
@@ -185,5 +189,36 @@ input {
 
     to {
         transform: rotate(359deg);
+    }
+}
+
+.wrapper-coding {
+    display: none;
+    height: 100vh;
+    /*This part is important for centering*/
+    display: grid;
+    place-items: center;
+}
+
+.typing-effect {
+    display: none;
+    width: 22ch;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 2em;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
     }
 }
