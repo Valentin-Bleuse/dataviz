@@ -5,12 +5,14 @@ function RedirectionStats() {
     document.location.href = "../";
 }
 let zoom = 0
+let fin = 0;
 function zooming(lat, long) {
     positions(lat, long, zoom);
     zoom += 2;
     for (let index = 1; index < 8; index++) {
         setTimeout(positions, (index * 500), lat, long, zoom);
         zoom += 3;
+
 
     }
 
@@ -30,7 +32,9 @@ function zooming(lat, long) {
     // zoom += 3;
     // //     console.log("zoom =" + zoom);
     //     console.log(index);
-    // setTimeout(active_typing(), 00);
+    // setTimeout(active_typing(), 5000);
+    console.log(fin)
+
 
 }
 
@@ -50,6 +54,11 @@ function positions(lat, long, lader) {
     }).addTo(map);
 
     var marker = L.marker([lat, long]).addTo(map);
+    fin += 1;
+    console.log(fin)
+    if (fin >= 8) {
+        setTimeout(active_typing, 2000);
+    }
 }
 function active_typing() {
     document.querySelector("#map").style.display = "none";
