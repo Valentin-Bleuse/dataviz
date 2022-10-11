@@ -1,0 +1,30 @@
+[
+    {
+        "nom" : "etudeMyopie", 
+        "variable1" : "Exposition à la lumière nocturne avant l'âge de 2 ans", 
+        "variable2" : "Pourcentage du groupe étant atteint de myopie", 
+        "donnees1" : ["Aucune", "Veilleuse", "Lumière de la chambre"],
+        "donnees2" : [10, 34, 55]
+    },
+    {
+        "nom" : "etudeReseauxEtDepression", 
+        "variable1" : "Exposition à la lumière nocturne avant l'âge de 2 ans", 
+        "variable2" : "Pourcentage du groupe étant atteint de myopie", 
+        "donnees1" : ["Aucune", "Veilleuse", "Lumière de la chambre"],
+        "donnees2" : [10, 34, 55]
+    },
+    {
+        "nom" : "etudeObesiteEtCo2", 
+        "variable1" : "Exposition à la lumière nocturne avant l'âge de 2 ans", 
+        "variable2" : "Pourcentage du groupe étant atteint de myopie", 
+        "donnees1" : ["Aucune", "Veilleuse", "Lumière de la chambre"],
+        "donnees2" : [10, 34, 55]
+    },
+    {
+        "nom" : "etudeAllemande", 
+        "variable1" : "Exposition à la lumière nocturne avant l'âge de 2 ans", 
+        "variable2" : "Pourcentage du groupe étant atteint de myopie", 
+        "donnees1" : ["Aucune", "Veilleuse", "Lumière de la chambre"],
+        "donnees2" : [10, 34, 55]
+    }
+]
