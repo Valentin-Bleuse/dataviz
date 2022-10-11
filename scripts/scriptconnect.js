@@ -8,22 +8,29 @@ let zoom = 0
 function zooming(lat, long) {
     positions(lat, long, zoom);
     zoom += 2;
-    setTimeout(positions, 500, lat, long, zoom);
-    zoom += 2;
-    setTimeout(positions, 1000, lat, long, zoom);
-    zoom += 3;
-    setTimeout(positions, 1500, lat, long, zoom);
-    zoom += 3;
-    setTimeout(positions, 2000, lat, long, zoom);
-    zoom += 3;
-    setTimeout(positions, 2500, lat, long, zoom);
-    zoom += 3;
-    setTimeout(positions, 3000, lat, long, zoom);
-    zoom += 3;
-    setTimeout(positions, 3500, lat, long, zoom);
-    zoom += 3;
-    //     console.log("zoom =" + zoom);
+    for (let index = 1; index < 8; index++) {
+        setTimeout(positions, (index * 500), lat, long, zoom);
+        zoom += 3;
+
+    }
+
+    // setTimeout(positions, 500, lat, long, zoom);
+    // zoom += 2;
+    // setTimeout(positions, 1000, lat, long, zoom);
+    // zoom += 3;
+    // setTimeout(positions, 1500, lat, long, zoom);
+    // zoom += 3;
+    // setTimeout(positions, 2000, lat, long, zoom);
+    // zoom += 3;
+    // setTimeout(positions, 2500, lat, long, zoom);
+    // zoom += 3;
+    // setTimeout(positions, 3000, lat, long, zoom);
+    // zoom += 3;
+    // setTimeout(positions, 3500, lat, long, zoom);
+    // zoom += 3;
+    // //     console.log("zoom =" + zoom);
     //     console.log(index);
+    // setTimeout(active_typing(), 00);
 
 }
 
@@ -93,7 +100,7 @@ function validateForm() {
 
 
         } else {
-            /* geolocation IS NOT available */
+            active_typing();
         }
         // active_typing();
         // RedirectionStats()
