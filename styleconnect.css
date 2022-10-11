@@ -192,33 +192,45 @@ input {
     }
 }
 
-.wrapper-coding {
-    display: none;
-    height: 100vh;
-    /*This part is important for centering*/
-    display: grid;
-    place-items: center;
+.var-highlight {
+    color: #C0AD60;
 }
 
-.typing-effect {
-    display: none;
-    width: 22ch;
-    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid;
-    font-family: monospace;
-    font-size: 2em;
+.string-highlight {
+    color: rgba(253, 149, 90, 0.8);
 }
 
-@keyframes typing {
-    from {
-        width: 0
+#typewriter {
+    display: none;
+    font-size: 2rem;
+    margin: 0;
+    font-family: "Courier New";
+}
+
+#typewriter:after {
+
+    content: "|";
+    -webkit-animation: blink 500ms linear infinite alternate;
+    animation: blink 500ms linear infinite alternate;
+
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
 
 @keyframes blink {
-    50% {
-        border-color: transparent
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }

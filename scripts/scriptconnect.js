@@ -1,4 +1,5 @@
-
+var u = document.querySelector(".username");
+var p = document.querySelector(".password");
 
 
 function RedirectionStats() {
@@ -60,14 +61,91 @@ function positions(lat, long, lader) {
         setTimeout(active_typing, 2000);
     }
 }
+
+function setupTypewriter(t) {
+    var HTML = t.innerHTML;
+
+    t.innerHTML = "";
+
+    var cursorPosition = 0,
+        tag = "",
+        writingTag = false,
+        tagOpen = false,
+        typeSpeed = 100,
+        tempTypeSpeed = 0;
+
+    var type = function () {
+
+        if (writingTag === true) {
+            tag += HTML[cursorPosition];
+        }
+
+        if (HTML[cursorPosition] === "<") {
+            tempTypeSpeed = 0;
+            if (tagOpen) {
+                tagOpen = false;
+                writingTag = true;
+            } else {
+                tag = "";
+                tagOpen = true;
+                writingTag = true;
+                tag += HTML[cursorPosition];
+            }
+        }
+        if (!writingTag && tagOpen) {
+            tag.innerHTML += HTML[cursorPosition];
+        }
+        if (!writingTag && !tagOpen) {
+            if (HTML[cursorPosition] === " ") {
+                tempTypeSpeed = 0;
+            }
+            else {
+                tempTypeSpeed = (Math.random() * typeSpeed) + 50;
+            }
+            t.innerHTML += HTML[cursorPosition];
+        }
+        if (writingTag === true && HTML[cursorPosition] === ">") {
+            tempTypeSpeed = (Math.random() * typeSpeed) + 50;
+            writingTag = false;
+            if (tagOpen) {
+                var newSpan = document.createElement("span");
+                t.appendChild(newSpan);
+                newSpan.innerHTML = tag;
+                tag = newSpan.firstChild;
+            }
+        }
+
+        cursorPosition += 1;
+        if (cursorPosition < HTML.length - 1) {
+            setTimeout(type, tempTypeSpeed);
+        }
+
+    };
+
+    return {
+        type: type
+    };
+}
+
+var typer = document.getElementById('typewriter');
+
+typewriter = setupTypewriter(typewriter);
+
+// typewriter.type();
+
+
+
+
 function active_typing() {
     document.querySelector("#map").style.display = "none";
-    document.querySelector(".wrapper-coding").style.display = "block"
-    document.querySelector(".typing-effect").style.display = "block"
+    document.querySelector("#typewriter").style.display = "block";
+    document.querySelector("#typewriter").style.display = "block";
+    // document.querySelector("#typewriter:after").style.display = "block";
+
+    typewriter.type();
 }
 function validateForm() {
-    var u = document.querySelector(".username");
-    var p = document.querySelector(".password");
+
     //Le if else est seulement un easter egg
     if (u.value == "tristan") {
         console.log("yeeeey")

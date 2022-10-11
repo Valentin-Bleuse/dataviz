@@ -47,14 +47,16 @@
 
         <div class="wrapper-coding">
             <div class="typing-effect">
-                Utilisateur : <br>
-                Localisation : <br>
-                Accès aux données classés <br>
-                Classification Alpha <br>
-                Identification réussi : <br>
-                Accès en cours à la ressource...
             </div>
         </div>
+        <pre id="typewriter" class='bg-color white'>
+Utilisateur connecté : <span id="user-connected"></span> <script>
+    var u = document.querySelector(".username");
+    console.log(u.value)
+    document.getElementById("user-connected").innerHTML = (u.value)</script>
+Utilisateur Authentifié
+Connexion...
+</pre>
     </main>
 
 
