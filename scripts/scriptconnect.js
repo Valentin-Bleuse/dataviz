@@ -1,6 +1,5 @@
-var u = document.querySelector(".username");
-var p = document.querySelector(".password");
-
+let function_occurence = 0;
+let etat = 0
 
 function RedirectionStats() {
     document.location.href = "../";
@@ -137,6 +136,8 @@ typewriter = setupTypewriter(typewriter);
 
 
 function active_typing() {
+    validateForm();
+    console.log("joe")
     document.querySelector("#map").style.display = "none";
     document.querySelector("#typewriter").style.display = "block";
     document.querySelector("#typewriter").style.display = "block";
@@ -145,53 +146,86 @@ function active_typing() {
     typewriter.type();
 }
 function validateForm() {
+    var u = document.querySelector(".username");
+    var p = document.querySelector(".password");
+    u = u.value;
+    console.log(u)
+    if (function_occurence > 1) {
+        console.log("etat 1")
+        if (etat == 0) {
+            console.log(etat)
+            if (document.querySelector("#user-connected") !== null) {
+                document.querySelector("#user-connected").innerHTML = u;
+                etat++;
+                return;
+            }
+            else {
+                return
+            }
+        }
+        else {
+            return
+        }
+
+    }
+    else {
+        function_occurence++;
+        console.log("etat 0")
+        if (u == "tristan") {
+            console.log(u.value)
+            console.log("yeeeey")
+            if (p.value == "garcia") {
+                console.log("omg")
+                document.querySelector(".container-connection").style.display = "none"
+                document.querySelector(".easter-egg").style.display = "flex"
+                document.querySelector(".easter-tri").style.display = "block"
+            }
+
+        }
+        else if (u == "gaelle") {
+            console.log("yeeeey")
+            if (p.value == "chat") {
+                console.log("omg")
+                document.querySelector(".container-connection").style.display = "none"
+                document.querySelector(".easter-egg").style.display = "flex"
+                document.querySelector(".easter-cat").style.display = "block"
+            }
+
+        }
+
+
+
+        else {
+
+            if (navigator.geolocation) {
+                /* geolocation is available */
+                document.querySelector(".container-connection").style.display = "none"
+                document.querySelector("#map").style.display = "flex"
+                navigator.geolocation.getCurrentPosition((position) => {
+                    zooming(position.coords.latitude, position.coords.longitude);
+                });
+
+
+
+
+
+
+
+
+
+
+            } else {
+                active_typing();
+            }
+            // active_typing();
+            // RedirectionStats()
+        }
+    }
+
+
 
     //Le if else est seulement un easter egg
-    if (u.value == "tristan") {
-        console.log("yeeeey")
-        if (p.value == "garcia") {
-            console.log("omg")
-            document.querySelector(".container-connection").style.display = "none"
-            document.querySelector(".easter-egg").style.display = "flex"
-            document.querySelector(".easter-tri").style.display = "block"
-        }
 
-    }
-    else if (u.value == "gaelle") {
-        console.log("yeeeey")
-        if (p.value == "chat") {
-            console.log("omg")
-            document.querySelector(".container-connection").style.display = "none"
-            document.querySelector(".easter-egg").style.display = "flex"
-            document.querySelector(".easter-cat").style.display = "block"
-        }
-
-    }
-
-    else {
-        if (navigator.geolocation) {
-            /* geolocation is available */
-            document.querySelector(".container-connection").style.display = "none"
-            document.querySelector("#map").style.display = "flex"
-            navigator.geolocation.getCurrentPosition((position) => {
-                zooming(position.coords.latitude, position.coords.longitude);
-            });
-
-
-
-
-
-
-
-
-
-
-        } else {
-            active_typing();
-        }
-        // active_typing();
-        // RedirectionStats()
-    }
 
 
 
