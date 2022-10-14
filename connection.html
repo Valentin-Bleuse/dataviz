@@ -19,6 +19,18 @@
 <body>
 
     <main class='bg-color'>
+
+        <div class="wrapper-coding">
+            <div class="typing-effect">
+            </div>
+
+            <pre id="typewriter" class='bg-color white'>
+Utilisateur connecté : <span id="user-connected"></span>
+Utilisateur Authentifié
+Connexion...
+</pre>
+        </div>
+
         <article class='container-connection  br-rd'>
             <div class="main-form-container main-color">
 
@@ -31,7 +43,7 @@
             </div>
             <div class="container-buttons secondary-color">
                 <input class='br-rd' type="button" value="Annuler">
-                <input class='br-rd bg-blue white' type="button" value="se connecter" onClick="validateForm()">
+                <input class='br-rd bg-blue white' type="button" value="se connecter" onClick="initialisation()">
             </div>
 
         </article>
@@ -45,15 +57,7 @@
 
         <div id="map"></div>
 
-        <div class="wrapper-coding">
-            <div class="typing-effect">
-            </div>
-        </div>
-        <pre id="typewriter" class='bg-color white'>
-Utilisateur connecté : <span id="user-connected"></span>
-Utilisateur Authentifié
-Connexion...
-</pre>
+
     </main>
 
 

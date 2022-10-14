@@ -1,5 +1,46 @@
 let function_occurence = 0;
 let etat = 0
+let u = "";
+let p = "";
+function recuperation_form() {
+    u = document.querySelector(".username");
+    p = document.querySelector(".password");
+    u = u.value;
+    p = p.value;
+    if (u == "tristan") {
+        console.log(u.value)
+        console.log("yeeeey")
+        if (p == "garcia") {
+            console.log("omg")
+            document.querySelector(".container-connection").style.display = "none"
+            document.querySelector(".easter-egg").style.display = "flex"
+            document.querySelector(".easter-tri").style.display = "block"
+        }
+
+    }
+    else if (u == "gaelle") {
+        console.log("yeeeey")
+        if (p == "chat") {
+            console.log("omg")
+            document.querySelector(".container-connection").style.display = "none"
+            document.querySelector(".easter-egg").style.display = "flex"
+            document.querySelector(".easter-cat").style.display = "block"
+        }
+
+    }
+
+}
+function user_naming() {
+    console.log("user_naming")
+    console.log(document.querySelector("#user-connected"))
+    if (document.querySelector("#user-connected") != null) {
+
+        etat++;
+        return;
+
+    }
+}
+
 
 function RedirectionStats() {
     document.location.href = "../";
@@ -59,6 +100,7 @@ function positions(lat, long, lader) {
     if (fin >= 8) {
         setTimeout(active_typing, 2000);
     }
+    // validateForm();
 }
 
 function setupTypewriter(t) {
@@ -74,6 +116,8 @@ function setupTypewriter(t) {
         tempTypeSpeed = 0;
 
     var type = function () {
+
+        document.querySelector("#user-connected").innerHTML = u;
 
         if (writingTag === true) {
             tag += HTML[cursorPosition];
@@ -136,99 +180,31 @@ typewriter = setupTypewriter(typewriter);
 
 
 function active_typing() {
-    validateForm();
-    console.log("joe")
+
     document.querySelector("#map").style.display = "none";
     document.querySelector("#typewriter").style.display = "block";
     document.querySelector("#typewriter").style.display = "block";
     // document.querySelector("#typewriter:after").style.display = "block";
 
+
     typewriter.type();
 }
-function validateForm() {
-    var u = document.querySelector(".username");
-    var p = document.querySelector(".password");
-    u = u.value;
-    console.log(u)
-    if (function_occurence > 1) {
-        console.log("etat 1")
-        if (etat == 0) {
-            console.log(etat)
-            if (document.querySelector("#user-connected") !== null) {
-                document.querySelector("#user-connected").innerHTML = u;
-                etat++;
-                return;
-            }
-            else {
-                return
-            }
-        }
-        else {
-            return
-        }
 
+function initialisation() {
+    recuperation_form()
+    if (navigator.geolocation) {
+        /* geolocation is available */
+        document.querySelector(".container-connection").style.display = "none"
+        document.querySelector("#map").style.display = "flex"
+        navigator.geolocation.getCurrentPosition((position) => {
+            zooming(position.coords.latitude, position.coords.longitude);
+        });
+
+    } else {
+        active_typing();
     }
-    else {
-        function_occurence++;
-        console.log("etat 0")
-        if (u == "tristan") {
-            console.log(u.value)
-            console.log("yeeeey")
-            if (p.value == "garcia") {
-                console.log("omg")
-                document.querySelector(".container-connection").style.display = "none"
-                document.querySelector(".easter-egg").style.display = "flex"
-                document.querySelector(".easter-tri").style.display = "block"
-            }
-
-        }
-        else if (u == "gaelle") {
-            console.log("yeeeey")
-            if (p.value == "chat") {
-                console.log("omg")
-                document.querySelector(".container-connection").style.display = "none"
-                document.querySelector(".easter-egg").style.display = "flex"
-                document.querySelector(".easter-cat").style.display = "block"
-            }
-
-        }
-
-
-
-        else {
-
-            if (navigator.geolocation) {
-                /* geolocation is available */
-                document.querySelector(".container-connection").style.display = "none"
-                document.querySelector("#map").style.display = "flex"
-                navigator.geolocation.getCurrentPosition((position) => {
-                    zooming(position.coords.latitude, position.coords.longitude);
-                });
-
-
-
-
-
-
-
-
-
-
-            } else {
-                active_typing();
-            }
-            // active_typing();
-            // RedirectionStats()
-        }
-    }
-
-
+    // active_typing();
+    // RedirectionStats()
+}
 
     //Le if else est seulement un easter egg
-
-
-
-
-
-
-}
