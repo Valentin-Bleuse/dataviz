@@ -17,11 +17,12 @@
     },
     {
         "nom" : "etudeReseauxEtDepression", 
-        "variable1" : "Exposition à la lumière nocturne avant l'âge de 2 ans", 
+        "variable1" : "Temps moyen passé par un adolescent américain sur les réseaux sociaux (h/jour)", 
         "variable2" : "Pourcentage du groupe étant atteint de myopie", 
-        "donnees1" : ["Aucune", "Veilleuse", "Lumière de la chambre"],
-        "donnees2" : [10, 34, 55],
-        "timeline" : []
+        "donnees1" : [1.35, 1.44, 1.57, 1.74, 1.95, 2.03, 2.18],
+        "donnees2" : [7.6, 7.6, 7.5, 7.8, 8, 8.3, 8.3],
+        "timeline" : [2010, 2011, 2012, 2013, 2014, 2015, 2016],
+        "sources" : "Springer Nature (2019) // American Psychological Association (2018)"
     },
     {
         "nom" : "etudeAllemande", 
