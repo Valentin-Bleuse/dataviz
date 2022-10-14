@@ -30,16 +30,7 @@ function recuperation_form() {
     }
 
 }
-function user_naming() {
-    console.log("user_naming")
-    console.log(document.querySelector("#user-connected"))
-    if (document.querySelector("#user-connected") != null) {
 
-        etat++;
-        return;
-
-    }
-}
 
 
 function RedirectionStats() {
@@ -57,23 +48,6 @@ function zooming(lat, long) {
 
     }
 
-    // setTimeout(positions, 500, lat, long, zoom);
-    // zoom += 2;
-    // setTimeout(positions, 1000, lat, long, zoom);
-    // zoom += 3;
-    // setTimeout(positions, 1500, lat, long, zoom);
-    // zoom += 3;
-    // setTimeout(positions, 2000, lat, long, zoom);
-    // zoom += 3;
-    // setTimeout(positions, 2500, lat, long, zoom);
-    // zoom += 3;
-    // setTimeout(positions, 3000, lat, long, zoom);
-    // zoom += 3;
-    // setTimeout(positions, 3500, lat, long, zoom);
-    // zoom += 3;
-    // //     console.log("zoom =" + zoom);
-    //     console.log(index);
-    // setTimeout(active_typing(), 5000);
     console.log(fin)
 
 
@@ -81,9 +55,7 @@ function zooming(lat, long) {
 
 
 function positions(lat, long, lader) {
-    // console.log(lat);
-    // console.log(long)
-    // console.log(long + lat)
+
     var container = L.DomUtil.get('map');
     if (container != null) {
         container._leaflet_id = null;
@@ -116,8 +88,6 @@ function setupTypewriter(t) {
         tempTypeSpeed = 0;
 
     var type = function () {
-
-        document.querySelector("#user-connected").innerHTML = u;
 
         if (writingTag === true) {
             tag += HTML[cursorPosition];
@@ -162,10 +132,13 @@ function setupTypewriter(t) {
         if (cursorPosition < HTML.length - 1) {
             setTimeout(type, tempTypeSpeed);
         }
-
+        if (document.querySelector("#user-connected") != null) {
+            document.querySelector("#user-connected").innerHTML = u;
+        }
     };
 
     return {
+
         type: type
     };
 }
