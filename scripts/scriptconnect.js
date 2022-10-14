@@ -31,8 +31,6 @@ function recuperation_form() {
 
 }
 
-
-
 function RedirectionStats() {
     document.location.href = "../";
 }
@@ -47,9 +45,7 @@ function zooming(lat, long) {
 
 
     }
-
     console.log(fin)
-
 
 }
 
@@ -72,7 +68,7 @@ function positions(lat, long, lader) {
     if (fin >= 8) {
         setTimeout(active_typing, 2000);
     }
-    // validateForm();
+
 }
 
 function setupTypewriter(t) {
@@ -135,6 +131,15 @@ function setupTypewriter(t) {
         if (document.querySelector("#user-connected") != null) {
             document.querySelector("#user-connected").innerHTML = u;
         }
+        if (document.querySelector("#user-localisation") != null) {
+            if (etat == 0) {
+                document.querySelector("#user-localisation").innerHTML = "échec";
+            }
+            else {
+                document.querySelector("#user-localisation").innerHTML = "oui";
+            }
+
+        }
     };
 
     return {
@@ -147,19 +152,12 @@ var typer = document.getElementById('typewriter');
 
 typewriter = setupTypewriter(typewriter);
 
-// typewriter.type();
-
-
-
 
 function active_typing() {
 
     document.querySelector("#map").style.display = "none";
     document.querySelector("#typewriter").style.display = "block";
     document.querySelector("#typewriter").style.display = "block";
-    // document.querySelector("#typewriter:after").style.display = "block";
-
-
     typewriter.type();
 }
 
@@ -167,17 +165,17 @@ function initialisation() {
     recuperation_form()
     if (navigator.geolocation) {
         /* geolocation is available */
+        etat = 1;
         document.querySelector(".container-connection").style.display = "none"
         document.querySelector("#map").style.display = "flex"
         navigator.geolocation.getCurrentPosition((position) => {
+            console.log(GeolocationPositionError)
             zooming(position.coords.latitude, position.coords.longitude);
         });
+
 
     } else {
         active_typing();
     }
-    // active_typing();
-    // RedirectionStats()
-}
 
-    //Le if else est seulement un easter egg
+}
