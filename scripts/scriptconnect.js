@@ -10,7 +10,6 @@ function removing(params) {
     document.querySelector(".password").value = "";
 }
 
-
 function recuperation_form() {
     u = document.querySelector(".username");
     p = document.querySelector(".password");
@@ -190,11 +189,13 @@ function initialisation() {
             navigator.geolocation.getCurrentPosition((position) => {
                 console.log(GeolocationPositionError)
                 zooming(position.coords.latitude, position.coords.longitude);
+                // active_typing("#typewriter", "#typewriter2");
             },
                 function (error) {
                     if (error.code == error.PERMISSION_DENIED) {
                         etat = 0;
                         active_typing("#map", "#typewriter");
+                        // active_typing("#typewriter", "#typewriter2");
                     }
 
                 });
