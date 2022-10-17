@@ -168,14 +168,22 @@ function initialisation() {
         etat = 1;
         document.querySelector(".container-connection").style.display = "none"
         document.querySelector("#map").style.display = "flex"
+
         navigator.geolocation.getCurrentPosition((position) => {
             console.log(GeolocationPositionError)
             zooming(position.coords.latitude, position.coords.longitude);
-        });
+        },
+            function (error) {
+                if (error.code == error.PERMISSION_DENIED)
+                    etat = 0;
+                active_typing();
+
+
+            });
 
 
     } else {
-        active_typing();
+        console.log("Votre Moteur de recherche n'est pas à jour")
     }
 
 }
