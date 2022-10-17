@@ -112,7 +112,7 @@ input {
 }
 
 .bg-blue {
-    background-color: #4A919E;
+    background-color: #1f4662;
 }
 
 .bg-red{
@@ -124,11 +124,11 @@ input {
 }
 
 .bg-blue:hover {
-    background-color: #62bece;
+    background-color: #234e6d;
 }
 
 .main-color {
-    background-color: #121212;
+    background-color: #15232d;
 }
 
 .secondary-color {
@@ -139,7 +139,7 @@ input {
     color: white;
 }
 .color-input{
-    background-color: white;
+    background-color: #e1eff9;
 }
 
 
