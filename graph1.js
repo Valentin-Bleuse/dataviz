@@ -51,13 +51,27 @@ d3.json('/stats.json', function(data){
     let x = d3.axisBottom(d3.scaleLinear()
     .domain([2010, 2016]) // la plage de valeurs possibles 
     .range([0,  600])) // les coordonnées du début et de fin de l'axe
-.ticks(7)
-.tickFormat(d3.format('d'));
+    .ticks(7)
+    .tickFormat(d3.format('d'));
     svg.append("g")
     .attr("transform", "translate(0,500)")
     .call(x);
 
+    let y1 = d3.axisLeft(d3.scaleLinear()
+    .domain([1.0, 3.0]) // la plage de valeurs possibles 
+    .range([500, 0])) // les coordonnées du début et de fin de l'axe
+    .ticks(10)
+    svg.append("g")
+    // .attr("transform", "translate(0,500)")
+    .call(y1);
 
+    let y2 = d3.axisRight(d3.scaleLinear()
+    .domain([7.0, 9.0]) // la plage de valeurs possibles 
+    .range([500, 0])) // les coordonnées du début et de fin de l'axe
+    .ticks(10)
+    svg.append("g")
+    .attr("transform", "translate(600,0)")
+    .call(y2);
 
     // let y1 = d3.scaleLinear()
     //   .domain( [1.0,3.0])
