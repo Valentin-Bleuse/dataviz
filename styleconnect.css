@@ -78,7 +78,7 @@ input {
     display: flex;
     justify-content: start;
     align-items: center;
-    padding: 5px;
+    padding: 1vw;
 
 }
 
@@ -115,11 +115,11 @@ input {
     background-color: #1f4662;
 }
 
-.bg-red{
+.bg-red {
     background-color: darkred;
 }
 
-.bg-red:hover{
+.bg-red:hover {
     background-color: red;
 }
 
@@ -138,7 +138,8 @@ input {
 .white {
     color: white;
 }
-.color-input{
+
+.color-input {
     background-color: #e1eff9;
 }
 
