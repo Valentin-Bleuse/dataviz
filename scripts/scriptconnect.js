@@ -2,6 +2,15 @@ let function_occurence = 0;
 let etat = 0
 let u = "";
 let p = "";
+
+
+function removing(params) {
+    document.querySelector(".username").value = "";
+    console.log("removed u")
+    document.querySelector(".password").value = "";
+}
+
+
 function recuperation_form() {
     u = document.querySelector(".username");
     p = document.querySelector(".password");
@@ -69,8 +78,6 @@ function positions(lat, long, lader) {
 
     var greenIcon = L.icon({
         iconUrl: 'images/marker.png',
-
-
         iconSize: [38, 60.8], // size of the icon
         shadowSize: [50, 64], // size of the shadow
         iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
