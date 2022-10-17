@@ -15,6 +15,7 @@ function recuperation_form() {
             document.querySelector(".container-connection").style.display = "none"
             document.querySelector(".easter-egg").style.display = "flex"
             document.querySelector(".easter-tri").style.display = "block"
+            return 1
         }
 
     }
@@ -25,6 +26,7 @@ function recuperation_form() {
             document.querySelector(".container-connection").style.display = "none"
             document.querySelector(".easter-egg").style.display = "flex"
             document.querySelector(".easter-cat").style.display = "block"
+            return 1
         }
 
     }
@@ -176,28 +178,29 @@ function active_typing() {
 }
 
 function initialisation() {
-    recuperation_form()
-    if (navigator.geolocation) {
-        /* geolocation is available */
-        etat = 1;
-        document.querySelector(".container-connection").style.display = "none"
-        document.querySelector("#map").style.display = "flex"
+    if (recuperation_form() != 1) {
+        if (navigator.geolocation) {
+            /* geolocation is available */
+            etat = 1;
+            document.querySelector(".container-connection").style.display = "none"
+            document.querySelector("#map").style.display = "flex"
 
-        navigator.geolocation.getCurrentPosition((position) => {
-            console.log(GeolocationPositionError)
-            zooming(position.coords.latitude, position.coords.longitude);
-        },
-            function (error) {
-                if (error.code == error.PERMISSION_DENIED)
-                    etat = 0;
-                active_typing();
-
-
-            });
+            navigator.geolocation.getCurrentPosition((position) => {
+                console.log(GeolocationPositionError)
+                zooming(position.coords.latitude, position.coords.longitude);
+            },
+                function (error) {
+                    if (error.code == error.PERMISSION_DENIED)
+                        etat = 0;
+                    active_typing();
 
 
-    } else {
-        console.log("Votre Moteur de recherche n'est pas à jour")
+                });
+
+
+        } else {
+            console.log("Votre Moteur de recherche n'est pas à jour")
+        }
+
     }
-
 }
