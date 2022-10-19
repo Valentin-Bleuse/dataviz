@@ -1,13 +1,13 @@
-let widthG2 = "700";
-let heightG2 = "700";
+let widthG2 = "100%";
+let heightG2 = "100%";
 
 
 
 let svgG2 = d3.select('#graph2')
     .append('svg')
-        .attr('width', width)
-        .attr('height', height)
-        .attr('viewBox', '-50 -350 700 250')
+        .attr('width', widthG2)
+        .attr('height', heightG2)
+        .attr('viewBox', '-50 -250 700 250')
     .append('g');
     // .attr("transform",
     //       "translate(50,50)");

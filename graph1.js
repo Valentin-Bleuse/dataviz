@@ -1,5 +1,5 @@
-let width = "700";
-let height = "700";
+let width = "100%";
+let height = "100%";
 
 
 
@@ -7,7 +7,7 @@ let svg = d3.select('#graph1')
     .append('svg')
         .attr('width', width)
         .attr('height', height)
-        .attr('viewBox', '-50 -350 700 250')
+        .attr('viewBox', '-50 -250 700 250')
     .append('g');
     // .attr("transform",
     //       "translate(50,50)");
@@ -71,17 +71,4 @@ d3.json('/stats.json', function(data){
     svg.append("g")
     .attr("transform", "translate(600,0)")
     .call(y2);
-
-    // let y1 = d3.scaleLinear()
-    //   .domain( [1.0,3.0])
-    //   .range([ 500, 0 ]);
-    // svg.append("g")
-    //   .call(d3.axisLeft(y1));
-
-    //   let y2 = d3.scaleLinear()
-    //   .domain( [7.0,9.0])
-    //   .range([ 500, 0 ]);
-    // svg.append("g")
-    // .attr("transform", "translate(600,0)")
-    //   .call(d3.axisLeft(y2));
 });
