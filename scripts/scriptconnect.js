@@ -2,6 +2,14 @@ let function_occurence = 0;
 let etat = 0
 let u = "";
 let p = "";
+
+
+function removing(params) {
+    document.querySelector(".username").value = "";
+    console.log("removed u")
+    document.querySelector(".password").value = "";
+}
+
 function recuperation_form() {
     u = document.querySelector(".username");
     p = document.querySelector(".password");
@@ -51,7 +59,6 @@ function zooming(lat, long) {
 
 }
 
-
 function positions(lat, long, lader) {
 
     var container = L.DomUtil.get('map');
@@ -69,8 +76,6 @@ function positions(lat, long, lader) {
 
     var greenIcon = L.icon({
         iconUrl: 'images/marker.png',
-
-
         iconSize: [38, 60.8], // size of the icon
         shadowSize: [50, 64], // size of the shadow
         iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
@@ -82,7 +87,7 @@ function positions(lat, long, lader) {
     fin += 1;
     console.log(fin)
     if (fin >= 8) {
-        setTimeout(active_typing, 3000);
+        setTimeout(active_typing("#map", "#typewriter"), 3000);
     }
 
 }
@@ -164,16 +169,12 @@ function setupTypewriter(t) {
     };
 }
 
-var typer = document.getElementById('typewriter');
-
 typewriter = setupTypewriter(typewriter);
 
+function active_typing(to_remove, to_display) {
 
-function active_typing() {
-
-    document.querySelector("#map").style.display = "none";
-    document.querySelector("#typewriter").style.display = "block";
-    document.querySelector("#typewriter").style.display = "block";
+    document.querySelector(to_remove).style.display = "none";
+    document.querySelector(to_display).style.display = "block";
     typewriter.type();
 }
 
@@ -188,15 +189,16 @@ function initialisation() {
             navigator.geolocation.getCurrentPosition((position) => {
                 console.log(GeolocationPositionError)
                 zooming(position.coords.latitude, position.coords.longitude);
+                // active_typing("#typewriter", "#typewriter2");
             },
                 function (error) {
-                    if (error.code == error.PERMISSION_DENIED)
+                    if (error.code == error.PERMISSION_DENIED) {
                         etat = 0;
-                    active_typing();
-
+                        active_typing("#map", "#typewriter");
+                        // active_typing("#typewriter", "#typewriter2");
+                    }
 
                 });
-
 
         } else {
             console.log("Votre Moteur de recherche n'est pas à jour")
