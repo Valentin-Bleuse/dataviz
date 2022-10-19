@@ -120,7 +120,7 @@ function active_typing(to_remove, to_display) {
         .pauseFor(1000)
         .typeString('Corrélations disponibles : ')
         .pauseFor(1000)
-        .typeString('4<br>')
+        .typeString('3<br>')
         .pauseFor(300)
         .typeString('Accès aux corrélations')
         .pauseFor(200)
