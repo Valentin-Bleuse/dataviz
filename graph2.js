@@ -15,31 +15,32 @@ let svgG2 = d3.select('#graph2')
 d3.json('/stats.json', function(data){
     let monGraph2 = data[1];
     console.log(monGraph2);
-    let line1G2 = "M0," + monGraph2.donnees1[0]*(-1);
-    let line2G2 = "M0," + (monGraph2.donnees2[0]*(-100)+600);
+    let line1G2 = "M0," + (monGraph2.donnees1[0]*(-2)+540);
+    let line2G2 = "M0," + (monGraph2.donnees2[0]*(-6)-50);
 
 
 
     monGraph2.donnees1.forEach(function(d,i){
         svgG2.append("circle")
-            .attr('cx', i*(600/42))
-            .attr('cy', -d)
-            .attr('r', '3');
-            line1G2 = line1G2 + "L"+i*(600/42)+","+(-d);
+            .attr('cx', i*(600/41))
+            .attr('cy', ((-d*2)+540))
+            .attr('r', '3')
+            .attr('fill', 'green');
+            line1G2 = line1G2 + "L"+i*(600/41)+","+((-d*2)+540);
     });
     svgG2.append('path')
     .attr('d', line1G2)
     .style('stroke-width', '3')
     .style('fill', 'none')
-    .attr('stroke', 'black');
+    .attr('stroke', 'green');
 
     monGraph2.donnees2.forEach(function(d,i){
         svgG2.append("circle")
-            .attr('cx', i*(600/42))
-            .attr('cy', ((-d*4.5)-100))
+            .attr('cx', i*(600/41))
+            .attr('cy', ((-d*6)-50))
             .attr('r', '3')
             .attr('fill', 'red');
-            line2G2 = line2G2 + "L"+i*(600/42)+","+((-d)+600);
+            line2G2 = line2G2 + "L"+i*(600/41)+","+((-d*6)-50);
     });
     svgG2.append('path')
     .attr('d', line2G2)
