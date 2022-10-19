@@ -173,6 +173,10 @@ input {
 
 .easter-egg input {
     cursor: pointer;
+    width: fit-content;
+    font-size: 1.2rem;
+    background-color: black;
+    padding: 0.8rem;
 }
 
 .rotate {
