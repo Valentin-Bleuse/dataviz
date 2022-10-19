@@ -1,6 +1,6 @@
 let width = "100%";
 let height = "100%";
-let facteur1 = 100;
+let facteur1 = 255;
 let facteur2 = 50;
 
 
@@ -21,13 +21,15 @@ d3.json('/stats.json', function(data){
     console.log(monGraph);
     let line1 = "M0," + monGraph.donnees1[0]*facteur1;
     let line2 = "M0," + monGraph.donnees2[0]*facteur2;
+
+
+
     monGraph.donnees1.forEach(function(d,i){
         svg.append("circle")
             .attr('cx', i*100)
-            .attr('cy', d*facteur1)
-            .attr('r', '3')
-            .attr('stroke', '#193549');
-            line1 = line1 + "L"+i*100+","+d*facteur1;
+            .attr('cy', (765-(d*facteur1)))
+            .attr('r', '3');
+            line1 = line1 + "L"+i*100+","+(765-(d*facteur1));
     });
     svg.append('path')
     .attr('d', line1)
@@ -40,9 +42,7 @@ d3.json('/stats.json', function(data){
             .attr('cx', i*100)
             .attr('cy', d*facteur2)
             .attr('r', '3')
-            .attr('stroke', '#193549')
-            .attr('fill', 'red')
-            .style('z-index', '10');
+            .attr('fill', 'red');
             line2 = line2 + "L"+i*100+","+d*facteur2;
     });
     svg.append('path')
