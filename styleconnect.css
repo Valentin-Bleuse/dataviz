@@ -234,13 +234,7 @@ g {
     font-family: "Courier New";
 }
 
-#typewriter:after {
 
-    content: "|";
-    -webkit-animation: blink 500ms linear infinite alternate;
-    animation: blink 500ms linear infinite alternate;
-
-}
 
 @-webkit-keyframes blink {
     0% {

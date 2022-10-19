@@ -72,8 +72,6 @@ function positions(lat, long, lader) {
         attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-
-
     var greenIcon = L.icon({
         iconUrl: 'images/marker.png',
         iconSize: [38, 60.8], // size of the icon
@@ -92,92 +90,51 @@ function positions(lat, long, lader) {
 
 }
 
-function setupTypewriter(t) {
-    var HTML = t.innerHTML;
-
-    t.innerHTML = "";
-
-    var cursorPosition = 0,
-        tag = "",
-        writingTag = false,
-        tagOpen = false,
-        typeSpeed = 100,
-        tempTypeSpeed = 0;
-
-    var type = function () {
-
-        if (writingTag === true) {
-            tag += HTML[cursorPosition];
-        }
-
-        if (HTML[cursorPosition] === "<") {
-            tempTypeSpeed = 0;
-            if (tagOpen) {
-                tagOpen = false;
-                writingTag = true;
-            } else {
-                tag = "";
-                tagOpen = true;
-                writingTag = true;
-                tag += HTML[cursorPosition];
-            }
-        }
-        if (!writingTag && tagOpen) {
-            tag.innerHTML += HTML[cursorPosition];
-        }
-        if (!writingTag && !tagOpen) {
-            if (HTML[cursorPosition] === " ") {
-                tempTypeSpeed = 0;
-            }
-            else {
-                tempTypeSpeed = (Math.random() * typeSpeed) + 50;
-            }
-            t.innerHTML += HTML[cursorPosition];
-        }
-        if (writingTag === true && HTML[cursorPosition] === ">") {
-            tempTypeSpeed = (Math.random() * typeSpeed) + 50;
-            writingTag = false;
-            if (tagOpen) {
-                var newSpan = document.createElement("span");
-                t.appendChild(newSpan);
-                newSpan.innerHTML = tag;
-                tag = newSpan.firstChild;
-            }
-        }
-
-        cursorPosition += 1;
-        if (cursorPosition < HTML.length - 1) {
-            setTimeout(type, tempTypeSpeed);
-        }
-        if (document.querySelector("#user-connected") != null) {
-            document.querySelector("#user-connected").innerHTML = u;
-        }
-        if (document.querySelector("#user-localisation") != null) {
-            if (etat == 0) {
-                document.querySelector("#user-localisation").innerHTML = "échec";
-            }
-            else {
-                document.querySelector("#user-localisation").innerHTML = "oui";
-            }
-
-        }
-    };
-
-    return {
-
-        type: type
-    };
-}
-
-typewriter = setupTypewriter(typewriter);
-
 function active_typing(to_remove, to_display) {
-
+    console.log("cache", to_remove);
     document.querySelector(to_remove).style.display = "none";
+    console.log("affiche", to_display);
     document.querySelector(to_display).style.display = "block";
-    typewriterexecution();
-    typewriter.type();
+    var app = document.querySelector(to_display);
+
+    var typewriter = new Typewriter(app, {
+        loop: false,
+        delay: 75,
+
+
+    });
+
+    typewriter
+        .pauseFor(300)
+        .typeString('Utilisateur connecté : ' + u + '<br>')
+        .pauseFor(300)
+        .typeString('Utilisateur Authentifié<br>')
+        .typeString('Utilisateur Localisé<br>')
+        .typeString('Connexion')
+        .pauseFor(200)
+        .typeString('.')
+        .pauseFor(200)
+        .typeString('.')
+        .pauseFor(200)
+        .typeString('.<br>')
+        .pauseFor(1000)
+        .typeString('Corrélations disponibles : ')
+        .pauseFor(1000)
+        .typeString('4<br>')
+        .pauseFor(300)
+        .typeString('Accès aux corrélations')
+        .pauseFor(200)
+        .typeString('.')
+        .pauseFor(200)
+        .typeString('.')
+        .pauseFor(200)
+        .typeString('.<br>')
+
+        .start();
 }
+
+function etat_localisation() { }
+
 
 function initialisation() {
     if (recuperation_form() != 1) {
@@ -205,13 +162,4 @@ function initialisation() {
         }
 
     }
-}
-
-function typewriterexecution() {
-    if (typewriter_num == 1) {
-        typewriter = setupTypewriter(typewriter);
-        active_typing("#typewriter", "#typewriter2");
-    }
-    return
-
 }
