@@ -2,7 +2,7 @@ let function_occurence = 0;
 let etat = 0
 let u = "";
 let p = "";
-
+let typewriter_num = 0;
 
 function removing(params) {
     document.querySelector(".username").value = "";
@@ -175,6 +175,7 @@ function active_typing(to_remove, to_display) {
 
     document.querySelector(to_remove).style.display = "none";
     document.querySelector(to_display).style.display = "block";
+    typewriterexecution();
     typewriter.type();
 }
 
@@ -189,13 +190,12 @@ function initialisation() {
             navigator.geolocation.getCurrentPosition((position) => {
                 console.log(GeolocationPositionError)
                 zooming(position.coords.latitude, position.coords.longitude);
-                // active_typing("#typewriter", "#typewriter2");
+
             },
                 function (error) {
                     if (error.code == error.PERMISSION_DENIED) {
                         etat = 0;
                         active_typing("#map", "#typewriter");
-                        // active_typing("#typewriter", "#typewriter2");
                     }
 
                 });
@@ -205,4 +205,13 @@ function initialisation() {
         }
 
     }
+}
+
+function typewriterexecution() {
+    if (typewriter_num == 1) {
+        typewriter = setupTypewriter(typewriter);
+        active_typing("#typewriter", "#typewriter2");
+    }
+    return
+
 }
