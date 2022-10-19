@@ -279,7 +279,7 @@ text {
 /* slider */
 .js-slider {
     width: 80%;
-    height: 30vw;
+    height: 45vw;
     overflow: hidden;
     position: relative;
     background-color: #6d0014;
@@ -297,10 +297,11 @@ text {
 .slide {
     width: 100%;
     display: flex;
+    justify-content: center;
 }
 
 #graph1 {
-    width: 100%;
+    width: 60%;
 }
 
 .dots {
