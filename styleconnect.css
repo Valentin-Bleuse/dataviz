@@ -391,6 +391,7 @@ canvas {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 1.5%;
 }
 
 .slide p {
