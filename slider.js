@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('1').innerHTML = "⚪"
         document.getElementById('2').innerHTML = "⚪"
         document.getElementById('3').innerHTML = "⚪"
-        document.getElementById(position).innerHTML = "⚫"
+        document.getElementById(position).innerHTML = "🔵"
 
     }
 
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
             e.addEventListener("click", dots1)
         })
     };
-    document.getElementById('1').innerHTML = "⚫"
+    document.getElementById('1').innerHTML = "🔵"
     dots()
 
     //  

@@ -42,7 +42,7 @@ function recuperation_form() {
 }
 
 function RedirectionStats() {
-    document.location.href = "../";
+    document.location.href = "../graph1.html";
 }
 let zoom = 0
 let fin = 0;
@@ -109,7 +109,7 @@ function active_typing(to_remove, to_display) {
         .typeString('Utilisateur connecté : ' + u + '<br>')
         .pauseFor(300)
         .typeString('Utilisateur Authentifié<br>')
-        .typeString('Utilisateur Localisé<br>')
+        .typeString('Utilisateur Localisé : ' + etat_localisation() + '<br>')
         .typeString('Connexion')
         .pauseFor(200)
         .typeString('.')
@@ -128,12 +128,20 @@ function active_typing(to_remove, to_display) {
         .pauseFor(200)
         .typeString('.')
         .pauseFor(200)
-        .typeString('.<br>')
-
+        .typeString('.')
         .start();
 }
 
-function etat_localisation() { }
+function etat_localisation() {
+    if (etat == 1) {
+        etat = 'Réussite'
+        return etat
+    }
+    else {
+        etat = 'échec'
+        return etat
+    }
+}
 
 
 function initialisation() {
