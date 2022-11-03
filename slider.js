@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var position = 1
     function decaleGauche() {
         console.log('gauche')
-        if (position == 3) {
+        if (position == 4) {
             position = 0
             document.querySelector('.js-graphs').style.left = -100 * position + '%'
             document.querySelector('.js-graphs').style.transition = 'none'
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function decaledroite() {
         console.log('droite')
         if (position == 1) {
-            position = 4
+            position = 5
             document.querySelector('.js-graphs').style.left = -100 * position + '%'
             document.querySelector('.js-graphs').style.transition = 'none'
             setTimeout(function () {
@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('1').innerHTML = "⚪"
         document.getElementById('2').innerHTML = "⚪"
         document.getElementById('3').innerHTML = "⚪"
+        document.getElementById('4').innerHTML = "⚪"
         document.getElementById(position).innerHTML = "🔵"
 
     }

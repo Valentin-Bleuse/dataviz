@@ -290,7 +290,8 @@ text {
     left: -100%;
     flex-direction: row;
     position: relative;
-    width: 500%;
+    width: 600%;
+    /* Si il y a 4 slide = 600, si il y en a 3 = 500 */
     height: 100%;
     transition: left 0.3s ease-out;
 }
@@ -303,6 +304,17 @@ text {
 
 #graph1 {
     width: 60%;
+    height: 80%;
+}
+
+#graph2 {
+    width: 60%;
+    height: 80%;
+}
+
+#graph3 {
+    width: 60%;
+    height: 80%;
 }
 
 .dots {
@@ -372,4 +384,16 @@ canvas {
     position: fixed;
     top: 0;
     left: 0;
+}
+
+.slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide p {
+    width: 60%;
+    color: white;
 }
