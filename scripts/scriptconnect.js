@@ -105,6 +105,7 @@ function active_typing(to_remove, to_display) {
     });
 
     typewriter
+
         .pauseFor(300)
         .typeString('Utilisateur connecté : ' + u + '<br>')
         .pauseFor(300)
@@ -121,15 +122,27 @@ function active_typing(to_remove, to_display) {
         .typeString('Corrélations disponibles : ')
         .pauseFor(1000)
         .typeString('3<br>')
-        .pauseFor(300)
+        .pauseFor(500)
         .typeString('Accès aux corrélations')
-        .pauseFor(200)
+        .pauseFor(400)
         .typeString('.')
         .pauseFor(200)
         .typeString('.')
         .pauseFor(200)
         .typeString('.')
+        .pauseFor(200)
+        .callFunction(() => {
+            RedirectionStats();
+        })
         .start();
+
+    // if (document.querySelector(".final") !== null) {
+    //     
+    // }
+    // else {
+    //     console.log("echec")
+    // }
+
 }
 
 function etat_localisation() {
