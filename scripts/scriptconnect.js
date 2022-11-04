@@ -3,6 +3,9 @@ let etat = 0
 let u = "";
 let p = "";
 let typewriter_num = 0;
+let corlatitude = 0;
+let corlongitude = 0;
+let cityname = "";
 
 function removing(params) {
     document.querySelector(".username").value = "";
@@ -143,18 +146,41 @@ function active_typing(to_remove, to_display) {
     //     console.log("echec")
     // }
 
+
+
+
 }
 
 function etat_localisation() {
     if (etat == 1) {
         etat = 'Réussite'
-        return etat
+        // console.log(cityname)
+        return (etat + "<br>ville : " + cityname)
     }
     else {
         etat = 'échec'
         return etat
     }
 }
+
+function naming_city() {
+    fetch('https://nominatim.openstreetmap.org/reverse?lat=' + corlatitude + '&lon=' + corlongitude + '&zoom=10&format=json').then(function (response) {
+        response.json().then(function (data) {
+            //    console.log(data);
+            const selected_city = data;
+            // console.log(selected_city)
+            let temp_adress = selected_city["address"]
+            let final_adress = temp_adress["village"];
+            cityname = final_adress;
+            // console.log(cityname)
+            //     for (const [key, value] of Object.entries(selected_city)) {
+            //         console.log(`${key}: ${value}`);
+            //     }
+        })
+    })
+    return
+}
+
 
 
 function initialisation() {
@@ -167,7 +193,11 @@ function initialisation() {
 
             navigator.geolocation.getCurrentPosition((position) => {
                 console.log(GeolocationPositionError)
+                corlatitude = position.coords.latitude;
+                corlongitude = position.coords.longitude;
+
                 zooming(position.coords.latitude, position.coords.longitude);
+                naming_city();
 
             },
                 function (error) {
