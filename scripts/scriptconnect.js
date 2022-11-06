@@ -168,9 +168,11 @@ function naming_city() {
         response.json().then(function (data) {
             //    console.log(data);
             const selected_city = data;
-            // console.log(selected_city)
-            let temp_adress = selected_city["address"]
-            let final_adress = temp_adress["village"];
+            console.log(selected_city)
+            let temp_adress = selected_city["display_name"]
+            console.log(temp_adress)
+            let get_city = temp_adress.split(',')
+            let final_adress = get_city[0];
             cityname = final_adress;
             // console.log(cityname)
             //     for (const [key, value] of Object.entries(selected_city)) {
