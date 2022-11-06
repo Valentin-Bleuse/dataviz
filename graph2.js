@@ -24,14 +24,14 @@ d3.json('/stats.json', function (data) {
             .attr('cx', i * (600 / 41))
             .attr('cy', ((-d * 2) + 540))
             .attr('r', '3')
-            .attr('fill', 'green');
+            .attr('fill', 'cyan');
         line1G2 = line1G2 + "L" + i * (600 / 41) + "," + ((-d * 2) + 540);
     });
     svgG2.append('path')
         .attr('d', line1G2)
         .style('stroke-width', '3')
         .style('fill', 'none')
-        .attr('stroke', 'green');
+        .attr('stroke', 'cyan');
 
     monGraph2.donnees2.forEach(function (d, i) {
         svgG2.append("circle")

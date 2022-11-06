@@ -23,14 +23,15 @@ d3.json('/stats.json', function (data) {
         svg.append("circle")
             .attr('cx', i * 100)
             .attr('cy', -d * 100)
-            .attr('r', '3');
+            .attr('r', '3')
+            .attr('fill', 'cyan');
         line1 = line1 + "L" + i * 100 + "," + (-d) * 100;
     });
     svg.append('path')
         .attr('d', line1)
         .style('stroke-width', '3')
         .style('fill', 'none')
-        .attr('stroke', 'black');
+        .attr('stroke', 'cyan');
 
     monGraph.donnees2.forEach(function (d, i) {
         svg.append("circle")

@@ -416,7 +416,7 @@ canvas {
 .legende {
     display: flex;
     color: white;
-    width: 10%;
+    width: 5%;
     height: 100%;
     align-items: center;
 }
