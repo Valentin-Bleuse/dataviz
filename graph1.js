@@ -8,9 +8,8 @@ let svg = d3.select('#graph1')
     .attr('width', width)
     .attr('height', height)
     .attr('viewBox', '-50 -300 700 50')
-    .append('g');
-// .attr("transform",
-//       "translate(50,50)");
+    .append('g')
+    .attr("transform", "translate(0,-50)");
 
 d3.json('/stats.json', function (data) {
     let monGraph = data[2];

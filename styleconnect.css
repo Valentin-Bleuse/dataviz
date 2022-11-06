@@ -386,6 +386,20 @@ canvas {
     left: 0;
 }
 
+.slide-container {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%;
+    align-items: end;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.graph {
+    width: 100%;
+    height: 100%;
+}
+
 .slide {
     display: flex;
     flex-direction: column;
@@ -397,6 +411,20 @@ canvas {
 .slide p {
     width: 60%;
     color: white;
+}
+
+.legende {
+    display: flex;
+    color: white;
+    width: 10%;
+    height: 100%;
+    align-items: center;
+}
+
+.legende p {
+    writing-mode: vertical-rl;
+    text-align: center;
+    margin: 50px 0 50px 0;
 }
 
 input::placeholder {
