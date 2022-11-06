@@ -45,7 +45,7 @@ function recuperation_form() {
 }
 
 function RedirectionStats() {
-    document.location.href = "../graph1.html";
+    document.location.href = "graph1.html";
 }
 let zoom = 0
 let fin = 0;
