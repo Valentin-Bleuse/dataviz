@@ -11,7 +11,7 @@ let svgG2 = d3.select('#graph2')
     .append('g')
     .attr("transform", "translate(0,-50)");
 
-d3.json('/stats.json', function (data) {
+d3.json('stats.json', function (data) {
     let monGraph2 = data[1];
     console.log(monGraph2);
     let line1G2 = "M0," + (monGraph2.donnees1[0] * (-2) + 540);
