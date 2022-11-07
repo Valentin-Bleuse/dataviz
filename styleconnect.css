@@ -307,17 +307,17 @@ text {
 
 #graph1 {
     width: 60%;
-    height: 35%;
+    height: 100%;
 }
 
 #graph2 {
     width: 60%;
-    height: 35%;
+    height: 100%;
 }
 
 #graph3 {
     width: 60%;
-    height: 35%;
+    height: 100%;
 }
 
 .dots {
