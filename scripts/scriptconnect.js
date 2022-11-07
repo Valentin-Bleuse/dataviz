@@ -113,6 +113,7 @@ function active_typing(to_remove, to_display) {
 
     });
 
+    //utilisation du plugin typewritter 
     typewriter
         .pauseFor(300)
         .typeString('Utilisateur connecté : ' + u + '<br>')
