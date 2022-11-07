@@ -307,17 +307,17 @@ text {
 
 #graph1 {
     width: 60%;
-    height: 80%;
+    height: 35%;
 }
 
 #graph2 {
     width: 60%;
-    height: 80%;
+    height: 35%;
 }
 
 #graph3 {
     width: 60%;
-    height: 80%;
+    height: 35%;
 }
 
 .dots {
@@ -394,9 +394,10 @@ canvas {
     flex-flow: row nowrap;
     height: 100%;
     width: 100%;
-    align-items: end;
+    align-items: center;
     justify-content: center;
     margin-top: 50px;
+    flex-direction: column;
 }
 
 .graph {
@@ -420,23 +421,25 @@ canvas {
 .legende {
     display: flex;
     color: white;
-    width: 5%;
-    height: 100%;
     align-items: center;
+    width: 40%;
 }
 
 .legende p {
-    writing-mode: vertical-rl;
+    /* writing-mode: vertical-rl; */
     text-align: center;
-    margin: 50px 0 50px 0;
+    width: 90%;
+    /* margin: 50px 0 50px 0; */
 }
 
 .slide-container .carre-cyan {
     color: cyan;
+    width: 10%;
 }
 
 .slide-container .carre-rouge {
     color: red;
+    width: 10%;
 }
 
 input::placeholder {
