@@ -428,6 +428,14 @@ canvas {
     margin: 50px 0 50px 0;
 }
 
+.slide-container .carre-cyan{
+    color: cyan;
+}
+
+.slide-container .carre-rouge{
+    color: red;
+}
+
 input::placeholder {
     font-size: 100%;
 }
