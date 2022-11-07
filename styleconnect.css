@@ -435,12 +435,12 @@ canvas {
 }
 
 .slide-container .carre-cyan {
-    color: cyan;
+    color: rgb(0, 172, 172);
     width: 10%;
 }
 
 .slide-container .carre-rouge {
-    color: red;
+    color: rgb(172, 0, 0);
     width: 10%;
 }
 
