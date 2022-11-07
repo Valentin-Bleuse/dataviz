@@ -53,8 +53,14 @@ function zooming(lat, long) {
     positions(lat, long, zoom);
     zoom += 2;
     for (let index = 1; index < 8; index++) {
-        setTimeout(positions, (index * 650), lat, long, zoom);
-        zoom += 3;
+        if (index < 7) {
+            setTimeout(positions, (index * 650), lat, long, zoom);
+            zoom += 3;
+        }
+        else {
+            setTimeout(positions, (index * 750), lat, long, zoom);
+            zoom += 3;
+        }
 
 
     }
@@ -108,7 +114,6 @@ function active_typing(to_remove, to_display) {
     });
 
     typewriter
-
         .pauseFor(300)
         .typeString('Utilisateur connecté : ' + u + '<br>')
         .pauseFor(300)

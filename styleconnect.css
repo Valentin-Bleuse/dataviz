@@ -228,6 +228,9 @@ g {
     font-size: 2rem;
     margin: 0;
     font-family: "Courier New";
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+
 }
 
 #typewriter2 {
@@ -428,11 +431,11 @@ canvas {
     margin: 50px 0 50px 0;
 }
 
-.slide-container .carre-cyan{
+.slide-container .carre-cyan {
     color: cyan;
 }
 
-.slide-container .carre-rouge{
+.slide-container .carre-rouge {
     color: red;
 }
 
@@ -504,6 +507,7 @@ input::placeholder {
     #graph3 {
         width: 80%;
     }
+
 
 
 
