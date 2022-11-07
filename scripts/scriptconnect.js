@@ -179,7 +179,7 @@ function naming_city() {
 }
 
 
-
+//initialisation geolocalisation
 function initialisation() {
     if (recuperation_form() != 1) {
         if (navigator.geolocation) {
