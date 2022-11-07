@@ -473,6 +473,10 @@ input::placeholder {
     line-height: 1.1rem;
 }
 
+.legal-content ul {
+    line-height: 1.5rem;
+}
+
 .exit-legal {
     /* margin: 10px; */
     border-radius: 50px;
