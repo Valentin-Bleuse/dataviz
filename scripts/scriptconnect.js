@@ -43,10 +43,11 @@ function recuperation_form() {
     }
 
 }
-
+//redirection vers la page des graphiques
 function RedirectionStats() {
     document.location.href = "graphiques.html";
 }
+
 let zoom = 0
 let fin = 0;
 function zooming(lat, long) {
@@ -67,7 +68,7 @@ function zooming(lat, long) {
     console.log(fin)
 
 }
-
+//initialisation de certains paramètres de la carte
 function positions(lat, long, lader) {
 
     var container = L.DomUtil.get('map');
@@ -113,6 +114,7 @@ function active_typing(to_remove, to_display) {
 
     });
 
+    //utilisation du plugin typewritter 
     typewriter
         .pauseFor(300)
         .typeString('Utilisateur connecté : ' + u + '<br>')
