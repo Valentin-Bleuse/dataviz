@@ -1,3 +1,4 @@
+//initialisation des variables
 let function_occurence = 0;
 let etat = 0
 let u = "";
