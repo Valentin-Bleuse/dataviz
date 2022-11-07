@@ -3,7 +3,7 @@ let height = "100%";
 
 
 
-let svg = d3.select('#graph1')
+let svg = d3.selectAll('.graph1')
     .append('svg')
     .attr('width', width)
     .attr('height', height)

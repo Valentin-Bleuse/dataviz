@@ -200,10 +200,6 @@ g {
     background-color: white;
 }
 
-.graph1 {
-    width: 100%;
-    height: 100%;
-}
 
 #map {
     height: 100%;
@@ -309,7 +305,12 @@ text {
     justify-content: center;
 }
 
-#graph1 {
+.graph {
+    width: 100%;
+    height: 100%;
+}
+
+.graph1 {
     width: 60%;
     height: 59%;
 }
@@ -404,10 +405,7 @@ canvas {
     flex-direction: column;
 }
 
-.graph {
-    width: 100%;
-    height: 100%;
-}
+
 
 .slide {
     display: flex;
@@ -505,7 +503,7 @@ input::placeholder {
 /* Responsivité */
 
 @media (min-width: 960px) and (max-width: 1250px) {
-    #graph1 {
+    .graph1 {
         width: 80%;
     }
 
@@ -530,7 +528,7 @@ input::placeholder {
 
     }
 
-    #graph1 {
+    .graph1 {
         width: 80%;
     }
 
@@ -555,7 +553,7 @@ input::placeholder {
         z-index: 99;
     }
 
-    #graph1 {
+    .graph1 {
         width: 80%;
     }
 
@@ -589,7 +587,7 @@ input::placeholder {
         width: 98vw;
     }
 
-    #graph1 {
+    .graph1 {
         width: 90%;
     }
 
