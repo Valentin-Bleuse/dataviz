@@ -163,6 +163,8 @@ function etat_localisation() {
     }
 }
 
+
+//récupère le nom de la ville
 function naming_city() {
     fetch('https://nominatim.openstreetmap.org/reverse?lat=' + corlatitude + '&lon=' + corlongitude + '&zoom=10&format=json').then(function (response) {
         response.json().then(function (data) {
