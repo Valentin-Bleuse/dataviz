@@ -31,7 +31,15 @@ d3.json('stats.json', function (data) {
         .attr('d', line1)
         .style('stroke-width', '3')
         .style('fill', 'none')
-        .attr('stroke', 'rgb(0, 172, 172)');
+        .attr('stroke', 'rgb(0, 172, 172)')
+        .on('mouseover', function (d, i) {
+            d3.select(this).transition()
+                 .duration('150')
+                 .attr('stroke', 'cyan')})
+        .on('mouseout', function (d, i) {
+            d3.select(this).transition()
+                 .duration('150')
+                 .attr('stroke', 'rgb(0, 172, 172)')});
 
     monGraph.donnees2.forEach(function (d, i) {
         svg.append("circle")
@@ -45,7 +53,15 @@ d3.json('stats.json', function (data) {
         .attr('d', line2)
         .style('stroke-width', '3')
         .style('fill', 'none')
-        .attr('stroke', 'rgb(172, 0, 0)');
+        .attr('stroke', 'rgb(172, 0, 0)')
+        .on('mouseover', function (d, i) {
+            d3.select(this).transition()
+                 .duration('150')
+                 .attr('stroke', 'red')})
+        .on('mouseout', function (d, i) {
+            d3.select(this).transition()
+                 .duration('150')
+                 .attr('stroke', 'rgb(172, 0, 0)')});
 
 
     let x = d3.axisBottom(d3.scaleLinear()
