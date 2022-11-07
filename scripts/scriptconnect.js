@@ -67,7 +67,7 @@ function zooming(lat, long) {
     console.log(fin)
 
 }
-
+//initialisation de certains paramètres de la carte
 function positions(lat, long, lader) {
 
     var container = L.DomUtil.get('map');
