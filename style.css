@@ -504,7 +504,7 @@ input::placeholder {
     width: 70px;
     height: 70px;
     border: white solid 3px;
-    z-index: 3;
+    z-index: 99;
     cursor: pointer;
     right: 25px;
     bottom: 25px;
