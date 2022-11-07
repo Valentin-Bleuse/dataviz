@@ -17,6 +17,13 @@ body {
     font-family: 'Courier Prime', monospace;
 }
 
+a {
+    color: #0a6cce;
+}
+
+a:visited {
+    color: #6540eb
+}
 
 main {
     width: 100%;
