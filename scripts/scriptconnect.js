@@ -13,6 +13,7 @@ function removing(params) {
     document.querySelector(".password").value = "";
 }
 
+//recuperation des informations saisient dans le formulaire
 function recuperation_form() {
     u = document.querySelector(".username");
     p = document.querySelector(".password");
