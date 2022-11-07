@@ -24,28 +24,36 @@ d3.json('scripts/stats.json', function (data) {
             .attr('cx', i * (600 / 6))
             .attr('cy', ((-d * 12) + 270))
             .attr('r', '3')
-            .attr('fill', 'cyan');
+            .attr('fill', 'rgb(0, 172, 172)');
         line1G3 = line1G3 + "L" + i * (600 / 6) + "," + ((-d * 12) + 270);
     });
     svgG3.append('path')
         .attr('d', line1G3)
         .style('stroke-width', '3')
         .style('fill', 'none')
-        .attr('stroke', 'cyan');
+        .attr('stroke', 'rgb(0, 172, 172)')
+        .on('mouseover', function (d, i) {
+            d3.select(this).transition()
+                 .duration('50')
+                 .attr('stroke', 'cyan')})
+        .on('mouseout', function (d, i) {
+            d3.select(this).transition()
+                 .duration('50')
+                 .attr('stroke', 'rgb(0, 172, 172)')});
 
     monGraph3.donnees2.forEach(function (d, i) {
         svgG3.append("circle")
             .attr('cx', i * (600 / 6))
             .attr('cy', ((-d * 12) + 270))
             .attr('r', '3')
-            .attr('fill', 'red');
+            .attr('fill', 'rgb(172, 0, 0)');
         line2G3 = line2G3 + "L" + i * (600 / 6) + "," + ((-d * 12) + 270);
     });
     svgG3.append('path')
         .attr('d', line2G3)
         .style('stroke-width', '3')
         .style('fill', 'none')
-        .attr('stroke', 'red');
+        .attr('stroke', 'rgb(172, 0, 0)');
 
 
     let xG3 = d3.axisBottom(d3.scaleLinear()

@@ -24,28 +24,28 @@ d3.json('scripts/stats.json', function (data) {
             .attr('cx', i * 100)
             .attr('cy', -d * 100)
             .attr('r', '3')
-            .attr('fill', 'cyan');
+            .attr('fill', 'rgb(0, 172, 172)');
         line1 = line1 + "L" + i * 100 + "," + (-d) * 100;
     });
     svg.append('path')
         .attr('d', line1)
         .style('stroke-width', '3')
         .style('fill', 'none')
-        .attr('stroke', 'cyan');
+        .attr('stroke', 'rgb(0, 172, 172)');
 
     monGraph.donnees2.forEach(function (d, i) {
         svg.append("circle")
             .attr('cx', i * 100)
             .attr('cy', -d * 100 + 600)
             .attr('r', '3')
-            .attr('fill', 'red');
+            .attr('fill', 'rgb(172, 0, 0)');
         line2 = line2 + "L" + i * 100 + "," + ((-d) * 100 + 600);
     });
     svg.append('path')
         .attr('d', line2)
         .style('stroke-width', '3')
         .style('fill', 'none')
-        .attr('stroke', 'red');
+        .attr('stroke', 'rgb(172, 0, 0)');
 
 
     let x = d3.axisBottom(d3.scaleLinear()
