@@ -34,14 +34,12 @@ d3.json('scripts/graphiques/stats.json', function (data) {
         .attr('stroke', 'rgb(0, 172, 172)')
         .on('mouseover', function (d, i) {
             d3.select(this).transition()
-                .duration('50')
-                .attr('stroke', 'cyan')
-        })
+                 .duration('150')
+                 .attr('stroke', 'cyan')})
         .on('mouseout', function (d, i) {
             d3.select(this).transition()
-                .duration('50')
-                .attr('stroke', 'rgb(0, 172, 172)')
-        });
+                 .duration('150')
+                 .attr('stroke', 'rgb(0, 172, 172)')});
 
     monGraph3.donnees2.forEach(function (d, i) {
         svgG3.append("circle")
@@ -55,8 +53,15 @@ d3.json('scripts/graphiques/stats.json', function (data) {
         .attr('d', line2G3)
         .style('stroke-width', '3')
         .style('fill', 'none')
-        .attr('stroke', 'rgb(172, 0, 0)');
-
+        .attr('stroke', 'rgb(172, 0, 0)')
+        .on('mouseover', function (d, i) {
+            d3.select(this).transition()
+                 .duration('150')
+                 .attr('stroke', 'red')})
+        .on('mouseout', function (d, i) {
+            d3.select(this).transition()
+                 .duration('150')
+                 .attr('stroke', 'rgb(172, 0, 0)')});
 
     let xG3 = d3.axisBottom(d3.scaleLinear()
         .domain([1961, 1983])
