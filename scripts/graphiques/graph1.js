@@ -14,19 +14,24 @@ let svg = d3.selectAll('.graph1')
 d3.json('scripts/graphiques/stats.json', function (data) {
     let monGraph = data[2];
     console.log(monGraph);
+    // On initialise le tracé de la courbe au premier point
     let line1 = "M0," + monGraph.donnees1[0] * (-100);
     let line2 = "M0," + (monGraph.donnees2[0] * (-100) + 600);
 
 
 
     monGraph.donnees1.forEach(function (d, i) {
+        // On crée les points
         svg.append("circle")
             .attr('cx', i * 100)
             .attr('cy', -d * 100)
             .attr('r', '3')
             .attr('fill', 'rgb(0, 172, 172)');
+        // À chaque point créé, on continue le tracé de la courbe du dernier jusqu'au nouveau
         line1 = line1 + "L" + i * 100 + "," + (-d) * 100;
     });
+
+        // On affiche la courbe
     svg.append('path')
         .attr('d', line1)
         .style('stroke-width', '3')
