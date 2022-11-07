@@ -53,7 +53,7 @@ function zooming(lat, long) {
     positions(lat, long, zoom);
     zoom += 2;
     for (let index = 1; index < 8; index++) {
-        setTimeout(positions, (index * 500), lat, long, zoom);
+        setTimeout(positions, (index * 650), lat, long, zoom);
         zoom += 3;
 
 
@@ -70,7 +70,7 @@ function positions(lat, long, lader) {
     }
     var map = L.map('map').setView([lat, long], lader);
 
-    L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+    L.tileLayer('https://api.maptiler.com/maps/darkmatter/256/{z}/{x}/{y}.png?key=FL0NM72FUsNn2tCJFXpG', {
         maxZoom: 19,
         attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
     }).addTo(map);
