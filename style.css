@@ -419,7 +419,7 @@ canvas {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 0.5%;
+    padding-bottom: 1%;
 }
 
 .slide p {
@@ -431,7 +431,7 @@ canvas {
     display: flex;
     color: white;
     align-items: center;
-    width: 40%;
+    width: 60%;
 }
 
 .legende p {
