@@ -150,6 +150,7 @@ function active_typing(to_remove, to_display) {
 
 }
 
+//verifie si l'utilisateur a donné on accord pour la localisation
 function etat_localisation() {
     if (etat == 1) {
         etat = 'Réussite'
