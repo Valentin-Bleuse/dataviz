@@ -144,16 +144,6 @@ function active_typing(to_remove, to_display) {
         })
         .start();
 
-    // if (document.querySelector(".final") !== null) {
-    //     
-    // }
-    // else {
-    //     console.log("echec")
-    // }
-
-
-
-
 }
 
 function etat_localisation() {
@@ -171,7 +161,6 @@ function etat_localisation() {
 function naming_city() {
     fetch('https://nominatim.openstreetmap.org/reverse?lat=' + corlatitude + '&lon=' + corlongitude + '&zoom=10&format=json').then(function (response) {
         response.json().then(function (data) {
-            //    console.log(data);
             const selected_city = data;
             console.log(selected_city)
             let temp_adress = selected_city["display_name"]
@@ -179,10 +168,6 @@ function naming_city() {
             let get_city = temp_adress.split(',')
             let final_adress = get_city[0];
             cityname = final_adress;
-            // console.log(cityname)
-            //     for (const [key, value] of Object.entries(selected_city)) {
-            //         console.log(`${key}: ${value}`);
-            //     }
         })
     })
     return

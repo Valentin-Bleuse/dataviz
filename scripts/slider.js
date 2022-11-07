@@ -1,12 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // fetch('api.php').then(function(response) { 
-    //     response.json().then(function(data){ 
-    //     //    console.log(data);
-    //        var produitsrecent = data;
-    //        console.log(produitsrecent);
-    //     }) 
-    //  })
-
     var position = 1
     function decaleGauche() {
         console.log('gauche')
@@ -59,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('.droit').addEventListener("click", decaledroite);
 
     function dots1() {
-        // var test=something(this.id);
         console.log(this.id)
         position = parseInt(this.id)
         document.querySelector('.js-graphs').style.left = -100 * position + '%'
@@ -84,6 +75,5 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('1').innerHTML = "🔵"
     dots()
 
-    //  
 
 });

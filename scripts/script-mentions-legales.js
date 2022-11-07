@@ -1,4 +1,3 @@
-
 let etat = 0
 let slider = document.querySelector('.js-slider');
 let mentions = document.querySelector('.legal-container')
