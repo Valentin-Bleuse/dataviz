@@ -43,10 +43,11 @@ function recuperation_form() {
     }
 
 }
-
+//redirection vers la page des graphiques
 function RedirectionStats() {
     document.location.href = "graphiques.html";
 }
+
 let zoom = 0
 let fin = 0;
 function zooming(lat, long) {
