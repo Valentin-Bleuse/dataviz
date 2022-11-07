@@ -390,6 +390,7 @@ canvas {
     display: flex;
     flex-flow: row nowrap;
     height: 100%;
+    width: 100%;
     align-items: end;
     justify-content: center;
     margin-top: 50px;
@@ -425,6 +426,14 @@ canvas {
     writing-mode: vertical-rl;
     text-align: center;
     margin: 50px 0 50px 0;
+}
+
+.slide-container .carre-cyan{
+    color: cyan;
+}
+
+.slide-container .carre-rouge{
+    color: red;
 }
 
 input::placeholder {
