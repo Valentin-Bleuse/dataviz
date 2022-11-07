@@ -12,7 +12,7 @@
 
 <body>
     <main class="bg-color" id="particles-js">
-        <div class="js-slider br-rd">
+        <div class="js-slider br-rd bg-trans-black">
             <div class="js-graphs">
                 <div class="slide s4 copie">
                     <p>Uno</p>
@@ -96,6 +96,53 @@
                 </div>
             </div>
 
+            <input class="btn-infos white bg-blue" type="button" onclick="open_mentions()" value='i' />
+
+
+
+            <div class="legal-container bg-trans-black br-rd">
+
+                <div class="exit-legal-container">
+                    <input class="exit-legal white bg-red" type="button" value="X" onclick="close_mentions()" />
+                </div>
+
+                <div class="legal-content white">
+                    Nos Mentions Légales : <br>
+                    Editeurs et habillage du site : Nathan Meneau, Oscar POISSON, Valentin BLEUSE <br>
+                    Dataviz est un projet scolaire réalisé au sein du département MMI de l'université Gustave Eiffel.
+                    <br>
+                    Ce site web est satirique et ne constitue en rien une information fiable. <br>
+                    Siège social : 2 Rue Albert Einstein, 77420 Champs-sur-Marne <br>
+                    Numéro de téléphone : 01 60 95 85 85 <br>
+                    Hébergeur : Github <br>
+                    Siège social : 88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis <br>
+                    Conservation des données : Dataviz ne conservent aucune données utilisateurs. <br>
+                    Droits d'auteurs : <br>
+                    easter-egg.png est une photo provenant du site <a
+                        href="https://intergalactiques.net/tristan-garcia/">intergalactiques.net qui en possède les
+                        droits.</a> qui en possède les droits. <br>
+                    cat-easter-egg.png est une illustration produite par <a href="https://toppng.com/john3">John3</a>
+                    qui
+                    est disponible sur le site <a
+                        href="https://toppng.com/free-image/free-png-smiling-cat-emoji-png-apple-hd-high-resolution-cat-emoji-PNG-free-PNG-Images_185605">toppng</a>.
+                    <br>
+                    Sources données des graphiques : <br>
+                    WHO, Global Health Observatory (2022) // Dr. Pieter Tans, NOAA/GML (gml.noaa.gov/ccgg/trends/) and
+                    Dr. Ralph Keeling, Scripps Institution of Oceanography (scrippsco2.ucsd.edu/) <br>
+                    Springer Nature (2019) // American Psychological Association (2018) <br>
+                    Vorwärts (1983) <br>
+                    Sources de codes externes utilisés : <br>
+                    <a href="https://github.com/tameemsafi/typewriterjs">plugin typewritter natif JS</a> <br>
+                    <a href="https://nominatim.openstreetmap.org">API nominatim</a>
+                </div>
+
+
+
+
+
+
+            </div>
+
 
 
 
@@ -111,6 +158,8 @@
             <script src="slider.js"></script>
             <script src="particles.js"></script>
             <script src="app.js"></script>
+            <script src="scripts/script-mentions-legales.js"></script>
+
     </main>
 </body>
 
