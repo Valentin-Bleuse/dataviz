@@ -11,7 +11,7 @@ let svgG3 = d3.select('#graph3')
     .append('g')
     .attr("transform", "translate(0,-50)");
 
-d3.json('scripts/stats.json', function (data) {
+d3.json('scripts/graphiques/stats.json', function (data) {
     let monGraph3 = data[3];
     console.log(monGraph3);
     let line1G3 = "M0," + (monGraph3.donnees1[0] * (-12) + 270);
@@ -34,12 +34,14 @@ d3.json('scripts/stats.json', function (data) {
         .attr('stroke', 'rgb(0, 172, 172)')
         .on('mouseover', function (d, i) {
             d3.select(this).transition()
-                 .duration('50')
-                 .attr('stroke', 'cyan')})
+                .duration('50')
+                .attr('stroke', 'cyan')
+        })
         .on('mouseout', function (d, i) {
             d3.select(this).transition()
-                 .duration('50')
-                 .attr('stroke', 'rgb(0, 172, 172)')});
+                .duration('50')
+                .attr('stroke', 'rgb(0, 172, 172)')
+        });
 
     monGraph3.donnees2.forEach(function (d, i) {
         svgG3.append("circle")
